@@ -33,8 +33,11 @@
         .section-padding { padding: 80px 0; }
         .text-center { text-align: center; }
         .btn { display: inline-block; padding: 14px 30px; border-radius: 50px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: var(--transicao); border: none; font-size: 0.85rem; }
-        .btn-primary { background-color: var(--dourado); color: white; }
-        .btn-primary:hover { background-color: var(--dourado-hover); transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .btn-primary { background-color: var(--dourado); color: white; box-shadow: 0 4px 20px rgba(197,160,89,0.4); }
+        .btn-primary:hover { background-color: var(--dourado-hover); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(197,160,89,0.5); }
+        /* Botão hero extra destaque */
+        .hero .btn-primary { font-size: 1rem; padding: 18px 40px; letter-spacing: 1.5px; animation: pulse-hero 3s infinite; }
+        @keyframes pulse-hero { 0%,100%{box-shadow:0 4px 20px rgba(197,160,89,0.4)} 50%{box-shadow:0 6px 35px rgba(197,160,89,0.7)} }
         .section-title { font-size: 2.5rem; color: var(--verde-escuro); margin-bottom: 20px; position: relative; display: inline-block; }
         .section-title::after { content: ''; display: block; width: 60px; height: 3px; background: var(--dourado); margin: 15px auto 0; }
 
@@ -160,7 +163,7 @@
         .copyright { border-top: 1px solid #222; padding-top: 30px; font-size: 0.9rem; }
 
         /* REVEAL */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
         .reveal.active { opacity: 1; transform: translateY(0); }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
@@ -184,6 +187,13 @@
         .event-card p { color: #666; font-size: 1rem; line-height: 1.7; }
         .info-list li { margin-bottom: 18px; font-size: 1.02rem; }
         .step p { opacity: 0.85; font-size: 1rem; line-height: 1.6; padding: 0 10px; }
+
+        /* EMOTIONAL QUOTE BANNER */
+        .quote-banner { background: var(--verde-escuro); padding: 60px 20px; text-align: center; }
+        .quote-banner blockquote { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 2rem); font-style: italic; color: var(--bege-creme); max-width: 800px; margin: 0 auto 20px; line-height: 1.6; }
+        .quote-banner blockquote::before { content: '\201C'; color: var(--dourado); font-size: 4rem; line-height: 0; vertical-align: -1.2rem; margin-right: 4px; }
+        .quote-banner blockquote::after { content: '\201D'; color: var(--dourado); font-size: 4rem; line-height: 0; vertical-align: -1.2rem; margin-left: 4px; }
+        .quote-banner cite { color: rgba(255,255,255,0.5); font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase; }
 
         /* SECTION TRANSITION (bridge between sections) */
         .section-bridge { height: 6px; background: linear-gradient(to right, var(--verde-escuro), var(--dourado), var(--verde-escuro)); opacity: 0.25; }
@@ -296,10 +306,10 @@
             <h2 class="section-title">Eventos que combinam com a Casa da Mangueira</h2>
             <p>Espaço versátil e integrado para realizar momentos marcantes</p>
             <div class="events-grid">
-                <div class="event-card"><i class="fas fa-ring"></i><h3>Casamentos</h3><p>Cerimônias ao ar livre, recepções charmosas e um cenário natural que emoldura fotos inesquecíveis.</p></div>
-                <div class="event-card"><i class="fas fa-cake-candles"></i><h3>Aniversários</h3><p>Um ambiente acolhedor para reunir a família e amigos em uma celebração leve e cheia de personalidade.</p></div>
-                <div class="event-card"><i class="fas fa-graduation-cap"></i><h3>Formaturas</h3><p>Espaço versátil planejado para celebrar suas grandes conquistas com conforto e excelente circulação.</p></div>
-                <div class="event-card"><i class="fas fa-briefcase"></i><h3>Corporativos</h3><p>Integração de equipes, confraternizações de fim de ano e eventos corporativos em um clima leve e inspirador.</p></div>
+                <div class="event-card"><i class="fas fa-ring"></i><h3>Casamentos</h3><p>Imagine trocar alianças sob as mangueiras, com seus convidados ao redor e a brisa natural tornando tudo mais perfeito. Cerimônias ao ar livre que ficam para sempre na memória.</p></div>
+                <div class="event-card"><i class="fas fa-cake-candles"></i><h3>Aniversários</h3><p>Aquela sensação de chegar e sentir que o lugar foi feito pra você. Reunir quem você ama num ambiente onde cada cantinho convida a criar memórias.</p></div>
+                <div class="event-card"><i class="fas fa-graduation-cap"></i><h3>Formaturas</h3><p>Você conquistou — e merece comemorar num cenário à altura. Espaço amplo, elegante e acolhedor para reunir família e amigos no seu grande momento.</p></div>
+                <div class="event-card"><i class="fas fa-briefcase"></i><h3>Corporativos</h3><p>Sair do escritório e celebrar juntos num lugar diferente muda tudo. Confraternizações que viram histórias contadas por anos depois.</p></div>
             </div>
         </div>
     </section>
@@ -307,18 +317,24 @@
     <section class="gallery section-padding reveal" id="galeria">
         <div class="container text-center">
             <h2 class="section-title">Veja o espaço de verdade</h2>
-            <p>Fotos reais para você conhecer cada detalhe do nosso ambiente</p>
+            <p>Cada foto conta uma história que aconteceu aqui. A sua pode ser a próxima.</p>
             <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Espaço da Casa da Mangueira"><div class="gallery-overlay"><div><h4>Espaço Vazio</h4><p>A base perfeita pronta para receber o seu projeto</p></div></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Espaço decorado"><div class="gallery-overlay"><div><h4>Espaço Decorado</h4><p>Inspirações reais de como o ambiente se transforma</p></div></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Área externa"><div class="gallery-overlay"><div><h4>Área Externa</h4><p>O charme do gramado plano sob as mangueiras</p></div></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Festa noturna"><div class="gallery-overlay"><div><h4>Eventos Noturnos</h4><p>A magia do varal de luzes integrado sob as copas das árvores</p></div></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Detalhes estruturais"><div class="gallery-overlay"><div><h4>Detalhes da Estrutura</h4><p>Pontos de apoio pensados para sua comodidade</p></div></div></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Entrada e acesso"><div class="gallery-overlay"><div><h4>Entrada / Acesso</h4><p>Recepção limpa, acessível e convidativa</p></div></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Casamento ao ar livre"><div class="gallery-overlay"><div><h4>Casamento ao Ar Livre</h4><p>O cenário que transforma o dia mais especial em eterno</p></div></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Festa decorada"><div class="gallery-overlay"><div><h4>Decoração & Celebração</h4><p>Cada detalhe pensado para o seu momento</p></div></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Pessoas celebrando"><div class="gallery-overlay"><div><h4>Pessoas & Alegria</h4><p>O que mais importa: as histórias que vocês criam aqui</p></div></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Festa noturna"><div class="gallery-overlay"><div><h4>Magia Noturna</h4><p>Quando o sol cai, a festa ganha outra dimensão</p></div></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" alt="Celebração em família"><div class="gallery-overlay"><div><h4>Família & Memórias</h4><p>Reunir quem você ama num lugar especial — não tem preço</p></div></div></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Ambiente iluminado"><div class="gallery-overlay"><div><h4>Atmosfera Única</h4><p>Um espaço que convida a ficar e não querer ir embora</p></div></div></div>
             </div>
         </div>
     </section>
     <div class="section-bridge"></div>
+
+    <!-- QUOTE EMOCIONAL -->
+    <div class="quote-banner">
+        <blockquote>Aqui não vendemos um espaço. Entregamos o cenário perfeito para o momento mais especial da sua vida.</blockquote>
+        <cite>— Casa da Mangueira Eventos, Feira de Santana</cite>
+    </div>
 
     <section class="quick-info section-padding reveal" id="informacoes">
         <div class="container">
@@ -354,15 +370,16 @@
     <section class="booking reveal" id="reserva">
         <div class="container text-center">
             <h2 class="section-title">Como Reservar</h2>
-            <p>Siga os passos simples para garantir sua data especial conosco</p>
+            <p>Quatro passos simples para garantir que o seu grande dia aconteça aqui</p>
             <div class="steps-grid">
-                <div class="step"><div class="step-number">1</div><h3>Contato</h3><p>Entre em contato via WhatsApp para verificar a disponibilidade de datas.</p></div>
-                <div class="step"><div class="step-number">2</div><h3>Visita</h3><p>Agende uma visita técnica monitorada para conhecer de perto cada detalhe do espaço.</p></div>
-                <div class="step"><div class="step-number">3</div><h3>Orçamento</h3><p>Receba uma proposta comercial totalmente personalizada de acordo com seu evento.</p></div>
-                <div class="step"><div class="step-number">4</div><h3>Contrato</h3><p>Assine seu contrato digital ou físico para garantir tranquilidade absoluta.</p></div>
+                <div class="step"><div class="step-number">1</div><h3>Contato</h3><p>Manda uma mensagem no WhatsApp — nossa equipe responde rápido e com muito carinho.</p></div>
+                <div class="step"><div class="step-number">2</div><h3>Visita</h3><p>Vem conhecer pessoalmente. Quando você vê ao vivo, você sente o diferencial.</p></div>
+                <div class="step"><div class="step-number">3</div><h3>Orçamento</h3><p>Montamos uma proposta personalizada para o seu evento, sem surpresas.</p></div>
+                <div class="step"><div class="step-number">4</div><h3>Data Garantida</h3><p>Assina o contrato e a sua data fica reservada. Agora é só comemorar!</p></div>
             </div>
-            <div style="margin-top:40px;">
-                <a href="https://wa.me/5575992264180?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20espaço%20para%20eventos." target="_blank" class="btn btn-primary">Falar com Consultor</a>
+            <div style="margin-top:50px; display:flex; flex-direction:column; align-items:center; gap:12px;">
+                <a href="https://wa.me/5575992264180?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20para%20conhecer%20o%20espaço." target="_blank" class="btn btn-primary" style="font-size:1.05rem;padding:20px 48px;letter-spacing:1.5px;"><i class="fab fa-whatsapp"></i> Agendar minha visita agora</a>
+                <span style="color:rgba(255,255,255,0.6);font-size:0.85rem;">Resposta geralmente em menos de 1 hora 🕐</span>
             </div>
         </div>
     </section>

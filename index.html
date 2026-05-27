@@ -164,6 +164,30 @@
         .reveal.active { opacity: 1; transform: translateY(0); }
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
 
+        /* CTA FLUTUANTE */
+        .cta-bar { position: fixed; bottom: 0; left: 0; right: 0; background: var(--verde-escuro); border-top: 2px solid var(--dourado); padding: 14px 20px; display: flex; justify-content: center; align-items: center; gap: 16px; z-index: 998; transform: translateY(100%); transition: transform 0.4s ease; }
+        .cta-bar.show { transform: translateY(0); }
+        .cta-bar p { color: rgba(255,255,255,0.85); font-size: 0.9rem; margin: 0; }
+        .cta-bar .btn { padding: 10px 24px; font-size: 0.8rem; animation: pulse-cta 2.5s infinite; }
+        @keyframes pulse-cta { 0%,100%{box-shadow:0 0 0 0 rgba(197,160,89,0.6)} 50%{box-shadow:0 0 0 10px rgba(197,160,89,0)} }
+        .cta-bar-close { color: rgba(255,255,255,0.5); background: none; border: none; font-size: 1.2rem; cursor: pointer; padding: 4px 8px; flex-shrink: 0; }
+        .cta-bar-close:hover { color: white; }
+
+        /* STATS */
+        .stats-bar { background: var(--verde-escuro); padding: 32px 0; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; text-align: center; }
+        .stat-item .num { font-family: 'Playfair Display', serif; font-size: 2.2rem; color: var(--dourado); font-weight: 700; line-height: 1; }
+        .stat-item .label { font-size: 0.8rem; color: rgba(255,255,255,0.7); text-transform: uppercase; letter-spacing: 1px; margin-top: 6px; }
+
+        /* FONT SIZE IMPROVEMENTS */
+        .about-text p { margin-bottom: 20px; font-size: 1.1rem; color: #555; line-height: 1.8; }
+        .event-card p { color: #666; font-size: 1rem; line-height: 1.7; }
+        .info-list li { margin-bottom: 18px; font-size: 1.02rem; }
+        .step p { opacity: 0.85; font-size: 1rem; line-height: 1.6; padding: 0 10px; }
+
+        /* SECTION TRANSITION (bridge between sections) */
+        .section-bridge { height: 6px; background: linear-gradient(to right, var(--verde-escuro), var(--dourado), var(--verde-escuro)); opacity: 0.25; }
+
         /* RESPONSIVE */
         @media (max-width: 992px) {
             .hero-content h1 { font-size: 2.6rem; }
@@ -182,6 +206,13 @@
     </style>
 </head>
 <body>
+
+    <!-- CTA BAR FIXA NO RODAPÉ -->
+    <div class="cta-bar" id="ctaBar">
+        <p>✨ Realize seu evento dos sonhos aqui</p>
+        <a href="https://wa.me/5575992264180?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20para%20conhecer%20o%20espaço." target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Agendar visita agora</a>
+        <button class="cta-bar-close" id="ctaClose" aria-label="Fechar">✕</button>
+    </div>
 
     <button id="scrollToTopBtn" class="scroll-to-top" title="Voltar ao topo">
         <i class="fas fa-chevron-up"></i>
@@ -211,7 +242,7 @@
     <section class="hero" id="inicio">
         <div class="hero-content container">
             <h1 class="font-serif">Seu evento sob as mangueiras, com conforto e estrutura em Feira de Santana</h1>
-            <p>Um espaço para casamentos, aniversários, formaturas e confraternizações com área ao ar livre, ambiente acolhedor e visitas agendadas.</p>
+            <p>Casamentos, aniversários, formaturas e confraternizações num espaço ao ar livre, acolhedor e cheio de personalidade — onde cada detalhe faz você sentir que escolheu o lugar certo.</p>
             <div class="hero-buttons">
                 <a href="https://wa.me/5575992264180?text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20para%20conhecer%20o%20espaço." target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Agendar visita por WhatsApp</a>
                 <a href="#galeria" class="btn btn-secondary">Ver fotos reais do espaço</a>
@@ -224,13 +255,26 @@
         </div>
     </section>
 
+    <!-- STATS BAR -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item"><div class="num">200+</div><div class="label">Eventos Realizados</div></div>
+                <div class="stat-item"><div class="num">4.9★</div><div class="label">Avaliação no Google</div></div>
+                <div class="stat-item"><div class="num">10+</div><div class="label">Anos de Tradição</div></div>
+                <div class="stat-item"><div class="num">500+</div><div class="label">Famílias Atendidas</div></div>
+            </div>
+        </div>
+    </div>
+    <div class="section-bridge"></div>
+
     <section class="about section-padding reveal" id="sobre">
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
                     <h2 class="font-serif">Um refúgio natural para celebrar sem sair de Feira de Santana</h2>
-                    <p>A Casa da Mangueira combina sombra natural, espaços de convivência e uma estrutura completa projetada para eventos íntimos ou grandes celebrações.</p>
-                    <p>O espaço foi criado para quem busca um ambiente belo, acessível e adaptável para sua ocasião especial, oferecendo a tranquilidade da natureza em uma das melhores localizações da cidade.</p>
+                    <p>A Casa da Mangueira é muito mais que um espaço — é o cenário onde sua celebração ganha vida. Mangueiras centenárias criam uma atmosfera única: sombra natural, frescor e uma beleza que nenhuma decoração consegue imitar.</p>
+                    <p>Aqui seus convidados se sentem acolhidos desde a chegada. Estrutura completa, flexibilidade para personalizar e um time atencioso que cuida de cada detalhe para que você aproveite cada momento.</p>
                 </div>
                 <div class="about-image">
                     <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ambiente externo decorado da Casa da Mangueira">
@@ -242,19 +286,10 @@
                 <div class="feature-card"><i class="fas fa-magic"></i><h4>Flexibilidade para decoração</h4></div>
                 <div class="feature-card"><i class="fas fa-route"></i><h4>Visitas técnicas agendadas</h4></div>
             </div>
-            <div class="specs-section">
-                <h3 class="specs-title font-serif">Estrutura & Detalhes Técnicos</h3>
-                <div class="specs-grid">
-                    <div class="spec-item"><span class="spec-label"><i class="fas fa-users"></i> Capacidade:</span><span class="spec-value">___ convidados (a consultar)</span></div>
-                    <div class="spec-item"><span class="spec-label"><i class="fas fa-car"></i> Estacionamento:</span><span class="spec-value">__ vagas de apoio</span></div>
-                    <div class="spec-item"><span class="spec-label"><i class="fas fa-restroom"></i> Banheiros:</span><span class="spec-value">__ sanitários modernos</span></div>
-                    <div class="spec-item"><span class="spec-label"><i class="fas fa-umbrella"></i> Área Coberta:</span><span class="spec-value">___ m² (a consultar)</span></div>
-                    <div class="spec-item"><span class="spec-label"><i class="fas fa-utensils"></i> Buffet:</span><span class="spec-value">Livre (parcerias externas)</span></div>
-                    <div class="spec-item"><span class="spec-label"><i class="fas fa-chair"></i> Mobiliário Incluso:</span><span class="spec-value">___ (solicitar lista)</span></div>
-                </div>
-            </div>
+
         </div>
     </section>
+    <div class="section-bridge"></div>
 
     <section class="events section-padding reveal" id="eventos">
         <div class="container text-center">
@@ -283,6 +318,7 @@
             </div>
         </div>
     </section>
+    <div class="section-bridge"></div>
 
     <section class="quick-info section-padding reveal" id="informacoes">
         <div class="container">
@@ -394,11 +430,24 @@
         });
 
         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        const ctaBar = document.getElementById('ctaBar');
+        const ctaClose = document.getElementById('ctaClose');
+
         window.addEventListener('scroll', function() {
             scrollToTopBtn.classList.toggle('show', window.scrollY > 300);
+            // Mostrar CTA bar após rolar 600px
+            if (window.scrollY > 600 && !ctaBar.dataset.closed) {
+                ctaBar.classList.add('show');
+            }
         });
+
         scrollToTopBtn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        ctaClose.addEventListener('click', function() {
+            ctaBar.classList.remove('show');
+            ctaBar.dataset.closed = 'true';
         });
 
         const menuBtn = document.getElementById('menuBtn');

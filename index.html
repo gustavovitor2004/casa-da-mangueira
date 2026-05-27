@@ -3,347 +3,799 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casa da Mangueira Eventos | Feira de Santana - BA</title>
-    <meta name="description" content="Espaço de eventos charmoso e aconchegante em Feira de Santana. Ambiente natural com mangueiras centenárias, perfeito para casamentos, aniversários e celebrações.">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'><path d='M57,85 C57,75 50,68 53,60 C55,55 58,52 56,45 C54,40 50,38 48,35 C49,38 52,40 53,44 C54,49 51,53 49,57 C46,64 52,72 52,85 Z' fill='%23c5a059'/><path d='M63,85 C63,75 70,68 67,60 C65,55 62,52 64,45 C66,40 70,38 72,35 C71,38 68,40 67,44 C66,49 69,53 71,57 C74,64 68,72 68,85 Z' fill='%23c5a059'/><path d='M60,85 C60,78 57,73 59,66 C61,61 64,58 62,52 C60,46 56,43 54,38 C56,41 58,45 58,49 C58,54 55,59 57,64 C59,69 61,75 61,85 Z' fill='%23b18f4e'/><path d='M40,85 L80,85 C75,85 70,83 67,81 C64,79 62,82 60,82 C58,82 56,79 53,81 C50,83 45,85 40,85 Z' fill='%23c5a059'/><path d='M51,50 C43,46 36,44 30,48 C36,49 42,48 48,52 Z' fill='%23c5a059'/><path d='M69,50 C77,46 84,44 90,48 C84,49 78,48 72,52 Z' fill='%23c5a059'/><circle cx='60' cy='30' r='25' fill='%23c5a059' opacity='0.85'/></svg>">
-    <meta property="og:title" content="Casa da Mangueira Eventos | Espaço de Eventos em Feira de Santana">
-    <meta property="og:description" content="Espaço de eventos charmoso e aconchegante em Feira de Santana. Ambiente natural com mangueiras centenárias, perfeito para casamentos, aniversários e celebrações.">
-    <meta property="og:image" content="https://lh5.googleusercontent.com/p/AF1QipN9S-rL3K95B-mK9ZqI_oX7bS6xX8A9L8y6b763=s1000">
-    <meta property="og:url" content="https://casadamangueiraeventos.vercel.app">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="pt_BR">
+    <title>Casa da Mangueira Eventos | Espaço de Sonhos em Feira de Santana</title>
+    <meta name="description" content="Espaço de eventos charmoso e aconchegante em Feira de Santana. Perfeito para casamentos, aniversários e celebrações ao ar livre sob mangueiras centenárias.">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
-        :root{--primary-dark:#1b3b2b;--primary-light:#2c5e43;--accent-gold:#c5a059;--bg-creme:#fcf9f2;--bg-beige:#f4eee1;--text-dark:#2d312e;--text-light:#ffffff;--font-title:'Playfair Display',serif;--font-body:'Montserrat',sans-serif;--transition:all 0.4s cubic-bezier(0.16,1,0.3,1)}
-        *{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-        body{font-family:var(--font-body);color:var(--text-dark);background-color:var(--bg-creme);line-height:1.6}
-        h1,h2,h3,h4{font-family:var(--font-title);font-weight:600}
-        a{text-decoration:none;color:inherit}
-        img{max-width:100%;display:block}
-        .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
-        .btn{display:inline-block;padding:14px 32px;font-size:.9rem;font-weight:500;letter-spacing:1px;text-transform:uppercase;border-radius:4px;transition:var(--transition);cursor:pointer;border:none}
-        .btn-gold{background-color:var(--accent-gold);color:var(--text-light)}
-        .btn-gold:hover{background-color:#b38f49;transform:translateY(-2px);box-shadow:0 8px 15px rgba(197,160,89,.2)}
-        .btn-outline{background-color:transparent;border:2px solid var(--primary-dark);color:var(--primary-dark)}
-        .btn-outline:hover{background-color:var(--primary-dark);color:var(--text-light);transform:translateY(-2px)}
-        .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
-        .reveal.active{opacity:1;transform:translateY(0)}
-        header{position:fixed;top:0;left:0;width:100%;z-index:1000;background-color:rgba(252,249,242,.96);backdrop-filter:blur(8px);box-shadow:0 2px 20px rgba(0,0,0,.05);transition:var(--transition)}
-        header.scrolled{padding:5px 0;background-color:var(--bg-creme)}
-        .nav-container{display:flex;justify-content:space-between;align-items:center;padding:10px 0}
-        .logo-wrapper{display:flex;align-items:center;gap:12px}
-        .brand-logo-svg{width:55px;height:55px;fill:none}
-        .logo-text{display:flex;flex-direction:column}
-        .logo-main{font-family:var(--font-title);font-size:1.3rem;font-weight:700;color:var(--primary-dark);letter-spacing:.5px;line-height:1.1}
-        .logo-sub{font-family:var(--font-body);font-size:.7rem;text-transform:uppercase;letter-spacing:4px;color:var(--accent-gold);font-weight:600;margin-top:2px}
-        .nav-menu{display:flex;list-style:none;gap:25px}
-        .nav-link{font-size:.9rem;font-weight:500;color:var(--primary-dark);position:relative;padding:5px 0;transition:var(--transition)}
-        .nav-link::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background-color:var(--accent-gold);transition:var(--transition)}
-        .nav-link:hover::after{width:100%}
-        .nav-toggle{display:none;font-size:1.5rem;color:var(--primary-dark);cursor:pointer}
-        .hero{height:100vh;min-height:600px;position:relative;display:flex;align-items:center;color:var(--text-light);text-align:center;background-size:cover;background-position:center;background-repeat:no-repeat;background-image:linear-gradient(rgba(27,59,43,.75),rgba(27,59,43,.45)),url('https://images.unsplash.com/photo-1537633552985-df8429e8048b?auto=format&fit=crop&w=1920&q=80')}
-        .hero-content{max-width:850px;margin:0 auto;padding-top:80px}
-        .hero h1{font-size:3.2rem;margin-bottom:20px;line-height:1.25;text-shadow:0 2px 10px rgba(0,0,0,.3)}
-        .hero p{font-size:1.15rem;margin-bottom:35px;font-weight:300;letter-spacing:.5px;text-shadow:0 1px 5px rgba(0,0,0,.3)}
-        .section-padding{padding:100px 0}
-        .section-title{text-align:center;margin-bottom:60px}
-        .section-title span{display:block;font-size:.85rem;text-transform:uppercase;letter-spacing:3px;color:var(--accent-gold);margin-bottom:10px;font-weight:600}
-        .section-title h2{font-size:2.5rem;color:var(--primary-dark);position:relative;padding-bottom:15px}
-        .section-title h2::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:60px;height:2px;background-color:var(--accent-gold)}
-        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
-        .about-text p{margin-bottom:20px;color:#555;text-align:justify}
-        .about-highlights{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:30px}
-        .highlight-item{display:flex;align-items:flex-start;gap:12px}
-        .highlight-item i{color:var(--accent-gold);font-size:1.2rem;margin-top:4px}
-        .highlight-item h4{font-family:var(--font-body);font-size:.95rem;font-weight:600;color:var(--primary-dark)}
-        .about-image{position:relative}
-        .about-image img{border-radius:8px;box-shadow:0 15px 30px rgba(0,0,0,.1)}
-        .about-image::before{content:'';position:absolute;top:-15px;left:-15px;width:100%;height:100%;border:2px solid var(--accent-gold);border-radius:8px;z-index:-1}
-        .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:70px;text-align:center;border-top:1px solid rgba(27,59,43,.1);padding-top:50px}
-        .stat-item h3{font-size:2.8rem;color:var(--primary-dark);margin-bottom:5px;font-weight:700}
-        .stat-item p{font-size:.85rem;color:#555;font-weight:600;text-transform:uppercase;letter-spacing:1px}
-        .events{background-color:var(--bg-beige)}
-        .events-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
-        .event-card{background-color:var(--bg-creme);border-radius:6px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.03);transition:var(--transition);display:flex;flex-direction:column;height:100%}
-        .event-card:hover{transform:translateY(-5px);box-shadow:0 10px 25px rgba(0,0,0,.08)}
-        .event-card-img{height:200px;background-size:cover;background-position:center}
-        .event-card-content{padding:25px;text-align:center;flex-grow:1;display:flex;flex-direction:column;justify-content:space-between}
-        .event-card-content h3{font-size:1.3rem;color:var(--primary-dark);margin-bottom:12px}
-        .event-card-content p{font-size:.9rem;color:#666;margin-bottom:15px}
-        .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-        .gallery-item{position:relative;overflow:hidden;border-radius:6px;aspect-ratio:4/3;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.05)}
-        .gallery-item img{width:100%;height:100%;object-fit:cover;transition:var(--transition)}
-        .gallery-overlay{position:absolute;top:0;left:0;width:100%;height:100%;background-color:rgba(27,59,43,.85);display:flex;flex-direction:column;justify-content:center;align-items:center;opacity:0;transition:var(--transition);color:var(--text-light);padding:20px;text-align:center}
-        .gallery-item:hover img{transform:scale(1.08)}
-        .gallery-item:hover .gallery-overlay{opacity:1}
-        .gallery-overlay i{font-size:1.5rem;color:var(--accent-gold);margin-bottom:10px}
-        .gallery-overlay h4{font-size:1.1rem;font-weight:500}
-        .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.9);z-index:2000;justify-content:center;align-items:center;padding:20px}
-        .lightbox-content{max-width:90%;max-height:80%;border-radius:4px;object-fit:contain}
-        .lightbox-close{position:absolute;top:25px;right:35px;color:var(--text-light);font-size:2rem;cursor:pointer;transition:var(--transition)}
-        .lightbox-close:hover{color:var(--accent-gold)}
-        .testimonials{background-color:var(--bg-beige)}
-        .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
-        .testimonial-card{background-color:var(--bg-creme);padding:35px 30px;border-radius:8px;box-shadow:0 10px 30px rgba(0,0,0,.03);border-top:3px solid var(--accent-gold);display:flex;flex-direction:column;justify-content:space-between;transition:var(--transition)}
-        .testimonial-card:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(0,0,0,.06)}
-        .testimonial-stars{color:var(--accent-gold);font-size:.95rem;margin-bottom:15px}
-        .testimonial-text{font-size:.95rem;color:#555;font-style:italic;margin-bottom:25px;line-height:1.6}
-        .testimonial-author{display:flex;align-items:center;gap:15px}
-        .testimonial-author-avatar{width:48px;height:48px;border-radius:50%;background-color:var(--bg-beige);display:flex;align-items:center;justify-content:center;color:var(--primary-dark);font-weight:700;border:2px solid var(--accent-gold);font-size:.9rem}
-        .testimonial-author-info h4{font-size:.95rem;color:var(--primary-dark);font-weight:600}
-        .testimonial-author-info p{font-size:.8rem;color:#777}
-        .steps{background-color:var(--primary-dark);color:var(--text-light)}
-        .steps .section-title h2{color:var(--text-light)}
-        .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
-        .step-item{text-align:center}
-        .step-number{width:60px;height:60px;background-color:var(--accent-gold);color:var(--text-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-family:var(--font-title);margin:0 auto 20px;font-weight:600}
-        .step-item h3{font-size:1.3rem;margin-bottom:15px;color:var(--bg-creme)}
-        .step-item p{font-size:.95rem;color:#b0c2b7}
-        .location-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:40px;align-items:stretch}
-        .location-info{display:flex;flex-direction:column;justify-content:center;background-color:var(--bg-beige);padding:40px;border-radius:8px}
-        .location-info h3{font-size:1.8rem;color:var(--primary-dark);margin-bottom:25px}
-        .info-detail{display:flex;align-items:flex-start;gap:15px;margin-bottom:20px}
-        .info-detail i{font-size:1.2rem;color:var(--accent-gold);margin-top:4px}
-        .info-detail h4{font-family:var(--font-body);font-weight:600;color:var(--primary-dark);font-size:1rem}
-        .info-detail p{color:#555;font-size:.95rem}
-        .map-wrapper{border-radius:8px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.05);min-height:350px}
-        .map-wrapper iframe{width:100%;height:100%;border:0}
-        .whatsapp-float{position:fixed;bottom:30px;right:30px;background-color:#25d366;color:white;width:60px;height:60px;border-radius:50%;font-size:30px;box-shadow:0 4px 15px rgba(0,0,0,.2);z-index:999;display:flex;align-items:center;justify-content:center;transition:var(--transition)}
-        .whatsapp-float:hover{transform:scale(1.1);background-color:#128c7e}
-        .whatsapp-float::before{content:'';position:absolute;width:100%;height:100%;background-color:#25d366;border-radius:50%;z-index:-1;opacity:.4;animation:pulse 2s infinite}
-        @keyframes pulse{0%{transform:scale(1);opacity:.4}100%{transform:scale(1.5);opacity:0}}
-        .back-to-top{position:fixed;bottom:30px;left:30px;background-color:var(--primary-dark);color:var(--text-light);width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 15px rgba(0,0,0,.15);z-index:999;transition:var(--transition);opacity:0;visibility:hidden;border:2px solid var(--accent-gold);cursor:pointer}
-        .back-to-top.active{opacity:1;visibility:visible}
-        .back-to-top:hover{background-color:var(--accent-gold);transform:translateY(-5px)}
-        footer{background-color:#12261c;color:#b0c2b7;padding:60px 0 20px}
-        .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;margin-bottom:40px}
-        .footer-logo-wrapper{display:flex;flex-direction:column;margin-bottom:20px}
-        .footer-logo-wrapper .brand-logo-svg{width:80px;height:80px;margin-bottom:10px}
-        .footer-logo-wrapper .logo-main{color:var(--text-light);font-size:1.5rem}
-        .footer-desc{font-size:.9rem;line-height:1.6}
-        .footer-links h3{color:var(--text-light);font-size:1.2rem;margin-bottom:20px;font-family:var(--font-body);font-weight:500}
-        .footer-links ul{list-style:none}
-        .footer-links ul li{margin-bottom:10px}
-        .footer-links ul li a{font-size:.9rem;transition:var(--transition)}
-        .footer-links ul li a:hover{color:var(--accent-gold);padding-left:5px}
-        .social-links{display:flex;gap:15px;margin-top:20px}
-        .social-icon{display:inline-flex;width:36px;height:36px;border-radius:50%;background-color:rgba(255,255,255,.05);align-items:center;justify-content:center;color:var(--text-light);transition:var(--transition)}
-        .social-icon:hover{background-color:var(--accent-gold);transform:translateY(-3px)}
-        .copyright{border-top:1px solid rgba(255,255,255,.05);padding-top:20px;text-align:center;font-size:.8rem}
-        @media(max-width:992px){.hero h1{font-size:2.6rem}.about-grid{grid-template-columns:1fr;gap:40px}.gallery-grid{grid-template-columns:repeat(2,1fr)}.testimonials-grid{grid-template-columns:1fr;gap:20px}.stats-grid{grid-template-columns:repeat(2,1fr);gap:25px}.steps-grid{grid-template-columns:1fr;gap:30px}.location-grid{grid-template-columns:1fr}}
-        @media(max-width:768px){.nav-menu{position:fixed;top:75px;left:-100%;width:100%;height:calc(100vh - 75px);background-color:var(--bg-creme);flex-direction:column;align-items:center;padding-top:50px;transition:var(--transition)}.nav-menu.active{left:0}.nav-toggle{display:block}.section-padding{padding:70px 0}.section-title h2{font-size:2rem}.footer-grid{grid-template-columns:1fr}}
-        @media(max-width:480px){.hero h1{font-size:2rem}.hero p{font-size:1rem}.gallery-grid{grid-template-columns:1fr}.stats-grid{grid-template-columns:1fr}.location-info{padding:25px}}
+        /* Variáveis de Cores e Estilos */
+        :root {
+            --verde-escuro: #1b3022;
+            --verde-medio: #2d4a36;
+            --bege-creme: #f9f7f2;
+            --bege-escuro: #e5dfd3;
+            --dourado: #c5a059;
+            --dourado-hover: #a68546;
+            --texto-cor: #333333;
+            --texto-claro: #ffffff;
+            --transicao: all 0.4s ease;
+        }
+
+        /* Reset e Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: var(--texto-cor);
+            background-color: var(--bege-creme);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transicao);
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding {
+            padding: 100px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transicao);
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--dourado);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dourado-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: var(--verde-escuro);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--dourado);
+            margin: 15px auto 0;
+        }
+
+        /* Header e Navegação */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: transparent;
+            padding: 20px 0;
+            transition: var(--transicao);
+        }
+
+        header.scrolled {
+            background-color: var(--verde-escuro);
+            padding: 10px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--bege-creme);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--bege-creme);
+            font-weight: 400;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links a:hover {
+            color: var(--dourado);
+        }
+
+        .mobile-menu-icon {
+            display: none;
+            color: var(--bege-creme);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1519167758481-83f550bb49b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 1.2s ease;
+        }
+
+        /* Sobre o Espaço */
+        .about {
+            background-color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-size: 2.2rem;
+            color: var(--verde-escuro);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 10px;
+            box-shadow: 20px 20px 0 var(--bege-escuro);
+        }
+
+        /* Serviços/Eventos */
+        .events {
+            background-color: var(--bege-creme);
+        }
+
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .event-card {
+            background: white;
+            padding: 40px 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transicao);
+            border-bottom: 4px solid transparent;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--dourado);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+        }
+
+        .event-card i {
+            font-size: 3rem;
+            color: var(--dourado);
+            margin-bottom: 20px;
+        }
+
+        .event-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--verde-escuro);
+        }
+
+        /* Galeria */
+        .gallery {
+            background-color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 50px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transicao);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(27, 48, 34, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transicao);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Como Reservar */
+        .booking {
+            background-color: var(--verde-escuro);
+            color: white;
+        }
+
+        .booking .section-title {
+            color: white;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .step {
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--dourado);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        /* Localização */
+        .location {
+            background-color: white;
+        }
+
+        .map-container {
+            margin-top: 50px;
+            height: 450px;
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .location-info {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-item i {
+            color: var(--dourado);
+            font-size: 1.2rem;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: var(--transicao);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            color: #888;
+            padding: 60px 0 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .social-links {
+            margin-bottom: 30px;
+        }
+
+        .social-links a {
+            font-size: 1.5rem;
+            margin: 0 15px;
+            color: #888;
+        }
+
+        .social-links a:hover {
+            color: var(--dourado);
+        }
+
+        .copyright {
+            border-top: 1px solid #222;
+            padding-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Animações de Scroll */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--verde-escuro);
+                flex-direction: column;
+                padding: 20px;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-icon {
+                display: block;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header id="header">
-        <div class="container nav-container">
-            <a href="#" class="logo-wrapper">
-                <svg class="brand-logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M57,85 C57,75 50,68 53,60 C55,55 58,52 56,45 C54,40 50,38 48,35 C49,38 52,40 53,44 C54,49 51,53 49,57 C46,64 52,72 52,85 Z" fill="#c5a059"/><path d="M63,85 C63,75 70,68 67,60 C65,55 62,52 64,45 C66,40 70,38 72,35 C71,38 68,40 67,44 C66,49 69,53 71,57 C74,64 68,72 68,85 Z" fill="#c5a059"/><path d="M60,85 C60,78 57,73 59,66 C61,61 64,58 62,52 C60,46 56,43 54,38 C56,41 58,45 58,49 C58,54 55,59 57,64 C59,69 61,75 61,85 Z" fill="#b18f4e"/><path d="M40,85 L80,85 C75,85 70,83 67,81 C64,79 62,82 60,82 C58,82 56,79 53,81 C50,83 45,85 40,85 Z" fill="#c5a059"/><path d="M51,50 C43,46 36,44 30,48 C36,49 42,48 48,52 Z" fill="#c5a059"/><path d="M48,42 C38,36 32,32 25,38 C32,39 38,39 44,44 Z" fill="#c5a059"/><path d="M53,35 C45,26 38,22 30,28 C37,29 43,31 49,36 Z" fill="#c5a059"/><path d="M69,50 C77,46 84,44 90,48 C84,49 78,48 72,52 Z" fill="#c5a059"/><path d="M72,42 C82,36 88,32 95,38 C88,39 82,39 76,44 Z" fill="#c5a059"/><path d="M67,35 C75,26 82,22 90,28 C83,29 77,31 71,36 Z" fill="#c5a059"/><path d="M60,35 C60,24 58,18 55,12 C58,15 61,20 61,28 Z" fill="#c5a059"/><path d="M60,35 C60,24 62,18 65,12 C62,15 59,20 59,28 Z" fill="#c5a059"/><path d="M22,38 C18,34 20,28 25,30 C28,32 26,36 22,38 Z" fill="#c5a059" opacity="0.9"/><path d="M28,48 C24,45 23,39 29,39 C32,39 32,44 28,48 Z" fill="#c5a059" opacity="0.95"/><path d="M26,26 C21,25 20,19 25,19 C29,19 29,23 26,26 Z" fill="#c5a059" opacity="0.9"/><path d="M33,24 C28,21 29,15 34,16 C37,17 37,21 33,24 Z" fill="#c5a059" opacity="0.95"/><path d="M38,32 C34,28 36,22 41,24 C44,25 42,29 38,32 Z" fill="#c5a059"/><path d="M42,16 C38,12 40,7 45,9 C48,10 46,14 42,16 Z" fill="#c5a059" opacity="0.85"/><path d="M49,24 C46,19 49,14 54,16 C57,17 55,22 49,24 Z" fill="#c5a059"/><path d="M46,44 C41,43 41,37 46,36 C50,36 49,41 46,44 Z" fill="#c5a059"/><path d="M98,38 C102,34 100,28 95,30 C92,32 94,36 98,38 Z" fill="#c5a059" opacity="0.9"/><path d="M92,48 C96,45 97,39 91,39 C88,39 88,44 92,48 Z" fill="#c5a059" opacity="0.95"/><path d="M94,26 C99,25 100,19 95,19 C91,19 91,23 94,26 Z" fill="#c5a059" opacity="0.9"/><path d="M87,24 C92,21 91,15 86,16 C83,17 83,21 87,24 Z" fill="#c5a059" opacity="0.95"/><path d="M82,32 C86,28 84,22 79,24 C76,25 78,29 82,32 Z" fill="#c5a059"/><path d="M78,16 C82,12 80,7 75,9 C72,10 74,14 78,16 Z" fill="#c5a059" opacity="0.85"/><path d="M71,24 C74,19 71,14 66,16 C63,17 65,22 71,24 Z" fill="#c5a059"/><path d="M74,44 C79,43 79,37 74,36 C70,36 71,41 74,44 Z" fill="#c5a059"/><path d="M50,11 C47,6 51,2 56,4 C59,6 56,10 50,11 Z" fill="#c5a059" opacity="0.9"/><path d="M70,11 C73,6 69,2 64,4 C61,6 64,10 70,11 Z" fill="#c5a059" opacity="0.9"/><path d="M60,8 C56,4 64,4 60,8 Z" fill="#c5a059"/>
-                </svg>
-                <div class="logo-text"><span class="logo-main">Casa da Mangueira</span><span class="logo-sub">Eventos</span></div>
-            </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#" class="nav-link">Início</a></li>
-                <li><a href="#sobre" class="nav-link">O Espaço</a></li>
-                <li><a href="#eventos" class="nav-link">Eventos</a></li>
-                <li><a href="#galeria" class="nav-link">Galeria</a></li>
-                <li><a href="#como-funciona" class="nav-link">Como Reservar</a></li>
-                <li><a href="#localizacao" class="nav-link">Localização</a></li>
-            </ul>
-            <div class="nav-toggle" id="nav-toggle"><i class="fa-solid fa-bars"></i></div>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo font-serif">Casa da Mangueira</a>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">O Espaço</a></li>
+                    <li><a href="#eventos">Eventos</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#reserva">Reservas</a></li>
+                    <li><a href="#localizacao">Localização</a></li>
+                </ul>
+                <div class="mobile-menu-icon" id="menuBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
         </div>
     </header>
 
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Celebre momentos marcantes sob a sombra de nossas mangueiras</h1>
-                <p>Um refúgio de sofisticação e bem-estar no coração de Feira de Santana, ideal para criar memórias inesquecíveis em meio à natureza.</p>
-                <a href="https://api.whatsapp.com/send?phone=5575992264180&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20espaço%20para%20eventos." target="_blank" class="btn btn-gold">Fazer um orçamento</a>
-            </div>
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-content container">
+            <h1 class="font-serif">Realize seu evento dos sonhos</h1>
+            <p>Um refúgio natural e elegante em Feira de Santana, onde cada detalhe é pensado para tornar sua celebração inesquecível.</p>
+            <a href="https://wa.me/5575999999999?text=Olá! Gostaria de saber mais sobre o espaço para eventos." target="_blank" class="btn btn-primary">Solicitar Orçamento</a>
         </div>
     </section>
 
-    <section class="section-padding reveal" id="sobre">
+    <!-- Sobre o Espaço -->
+    <section class="about section-padding reveal" id="sobre">
         <div class="container">
             <div class="about-grid">
                 <div class="about-text">
-                    <div class="section-title" style="text-align:left;margin-bottom:30px;">
-                        <span>Um Refúgio Charmoso</span>
-                        <h2 style="left:0;transform:none;padding-bottom:15px;">Sobre a Casa</h2>
-                    </div>
-                    <p>A <strong>Casa da Mangueira Eventos</strong> nasceu da proposta de criar um refúgio de tranquilidade e elegância no coração de Feira de Santana. O grande diferencial do nosso espaço reside na presença imponente de mangueiras centenárias, criando um teto verde natural e proporcionando um clima fresco, romântico e muito aconchegante.</p>
-                    <p>Nossa estrutura equilibra a conveniência de áreas cobertas bem estruturadas com a leveza de áreas ao ar livre, sendo o cenário ideal para eventos diurnos ou noturnos que buscam fugir da rigidez das salas fechadas e tradicionais.</p>
-                    <div class="about-highlights">
-                        <div class="highlight-item"><i class="fa-solid fa-leaf"></i><div><h4>Clima Natural</h4><p style="font-size:.85rem;margin:5px 0 0;">Ar puro e sombras naturais e agradáveis.</p></div></div>
-                        <div class="highlight-item"><i class="fa-solid fa-hands-holding"></i><div><h4>Estrutura Completa</h4><p style="font-size:.85rem;margin:5px 0 0;">Cozinha de apoio, banheiros acessíveis e área coberta.</p></div></div>
-                    </div>
+                    <h2 class="font-serif">Um refúgio sob as mangueiras</h2>
+                    <p>A <strong>Casa da Mangueira Eventos</strong> nasceu do desejo de oferecer um ambiente que une a sofisticação de grandes celebrações com o acolhimento da natureza.</p>
+                    <p>Localizado no coração de Feira de Santana, nosso espaço se destaca pelas mangueiras centenárias que proporcionam uma sombra generosa e um clima fresco, ideal para cerimônias ao ar livre ou recepções charmosas em nossa área coberta.</p>
+                    <p>Com uma infraestrutura completa e versátil, estamos prontos para receber desde mini-weddings íntimos até grandes festas corporativas, sempre com o toque rústico-chique que só a Casa da Mangueira possui.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=800&q=80" alt="Espaço ao ar livre para eventos">
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ambiente externo da Casa da Mangueira">
                 </div>
-            </div>
-            <div class="stats-grid">
-                <div class="stat-item"><h3 class="counter" data-target="200" data-prefix="+">+0</h3><p>Eventos Realizados</p></div>
-                <div class="stat-item"><h3 class="counter" data-target="500" data-prefix="+">+0</h3><p>Famílias Atendidas</p></div>
-                <div class="stat-item"><h3 class="counter" data-target="6" data-suffix=" Anos">0</h3><p>Anos de Experiência</p></div>
-                <div class="stat-item"><h3 class="counter" data-target="4.9" data-suffix="★">0</h3><p>Avaliação no Google</p></div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding events reveal" id="eventos">
-        <div class="container">
-            <div class="section-title"><span>Versatilidade para Celebrar</span><h2>Eventos que Atendemos</h2></div>
+    <!-- Eventos -->
+    <section class="events section-padding reveal" id="eventos">
+        <div class="container text-center">
+            <h2 class="section-title">Nossos Eventos</h2>
+            <p>Espaço versátil para diversos tipos de celebrações</p>
+            
             <div class="events-grid">
-                <div class="event-card"><div class="event-card-img" style="background-image:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80');"></div><div class="event-card-content"><div><h3>Casamentos & Mini Weddings</h3><p>Cenários românticos ao pôr do sol ou sob a luz de fadas, proporcionando uma celebração acolhedora e intimista.</p></div><a href="https://api.whatsapp.com/send?phone=5575992264180&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20Casamento%20na%20Casa%20da%20Mangueira." target="_blank" class="btn btn-outline" style="padding:10px 20px;font-size:.8rem;margin-top:15px;">Saber mais</a></div></div>
-                <div class="event-card"><div class="event-card-img" style="background-image:url('https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80');"></div><div class="event-card-content"><div><h3>Aniversários & 15 Anos</h3><p>Celebre novas primaveras em um espaço descontraído, com muito verde para belíssimos registros fotográficos.</p></div><a href="https://api.whatsapp.com/send?phone=5575992264180&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20Aniversário%20na%20Casa%20da%20Mangueira." target="_blank" class="btn btn-outline" style="padding:10px 20px;font-size:.8rem;margin-top:15px;">Saber mais</a></div></div>
-                <div class="event-card"><div class="event-card-img" style="background-image:url('https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80');"></div><div class="event-card-content"><div><h3>Corporativos & Confraternizações</h3><p>Ambiente perfeito para descontrair equipes, workshops, lançamentos de marcas e confraternizações de fim de ano.</p></div><a href="https://api.whatsapp.com/send?phone=5575992264180&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20Eventos%20Corporativos%20na%20Casa%20da%20Mangueira." target="_blank" class="btn btn-outline" style="padding:10px 20px;font-size:.8rem;margin-top:15px;">Saber mais</a></div></div>
+                <div class="event-card">
+                    <i class="fas fa-ring"></i>
+                    <h3>Casamentos</h3>
+                    <p>O cenário perfeito para o "sim" mais importante da sua vida, com opções ao ar livre ou em área coberta.</p>
+                </div>
+                <div class="event-card">
+                    <i class="fas fa-cake-candles"></i>
+                    <h3>Aniversários</h3>
+                    <p>Comemore a vida em um ambiente descontraído e elegante, ideal para todas as idades.</p>
+                </div>
+                <div class="event-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Formaturas</h3>
+                    <p>Celebre essa conquista com estilo e conforto para você e seus convidados.</p>
+                </div>
+                <div class="event-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Corporativos</h3>
+                    <p>Confraternizações e eventos empresariais em um local que inspira criatividade e bem-estar.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section-padding reveal" id="galeria">
-        <div class="container">
-            <div class="section-title"><span>Imagens do Local</span><h2>Galeria de Momentos</h2></div>
+    <!-- Galeria -->
+    <section class="gallery section-padding reveal" id="galeria">
+        <div class="container text-center">
+            <h2 class="section-title">Galeria de Inspirações</h2>
+            <p>Conheça um pouco da magia do nosso espaço</p>
+            
             <div class="gallery-grid">
-                <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src,'Cerimônia ao Ar Livre')"><img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80" alt="Cerimônia ao ar livre" loading="lazy"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><h4>Casamento ao Ar Livre</h4></div></div>
-                <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src,'Decoração de Mesa')"><img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80" alt="Decoração de mesa" loading="lazy"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><h4>Mesa Posta ao Ar Livre</h4></div></div>
-                <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src,'Espaço Verde')"><img src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80" alt="Espaço verde" loading="lazy"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><h4>Celebrações Noturnas</h4></div></div>
-                <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src,'Arco Floral')"><img src="https://images.unsplash.com/photo-1478812954026-9c750f0e89fc?auto=format&fit=crop&w=600&q=80" alt="Arco floral" loading="lazy"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><h4>Luzes Decorativas</h4></div></div>
-                <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src,'Mesa de Doces')"><img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=600&q=80" alt="Mesa de doces" loading="lazy"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><h4>Espaço para Doces</h4></div></div>
-                <div class="gallery-item" onclick="openLightbox(this.querySelector('img').src,'Recepção')"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=600&q=80" alt="Recepção" loading="lazy"><div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i><h4>Cenário de Recepção</h4></div></div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Decoração de Casamento">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Decoração Clássica</h4>
+                            <p>Elegância em cada detalhe</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Evento Noturno">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Eventos Noturnos</h4>
+                            <p>Iluminação mágica sob as árvores</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Área Externa">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Cerimônia ao Ar Livre</h4>
+                            <p>A natureza como testemunha</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Festa de Aniversário">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Celebrações Vibrantes</h4>
+                            <p>Espaço para todos os momentos</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1505236858219-8359eb29e329?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Buffet">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Área de Buffet</h4>
+                            <p>Ampla e bem estruturada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Detalhes">
+                    <div class="gallery-overlay">
+                        <div>
+                            <h4>Detalhes Encantadores</h4>
+                            <p>Onde o sonho acontece</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt="Visualização ampliada">
-    </div>
-
-    <section class="section-padding testimonials reveal" id="depoimentos">
-        <div class="container">
-            <div class="section-title"><span>Avaliações dos Clientes</span><h2>Quem Celebra Conosco</h2></div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card"><div><div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="testimonial-text">"Casar sob a sombra das mangueiras foi a realização de um sonho. Nossos convidados ficaram encantados com a beleza natural e o frescor do espaço. Estrutura impecável!"</p></div><div class="testimonial-author"><div class="testimonial-author-avatar">MS</div><div class="testimonial-author-info"><h4>Mariana Souza</h4><p>Noiva (Outubro/2023)</p></div></div></div>
-                <div class="testimonial-card"><div><div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="testimonial-text">"Espaço excelente para eventos de empresa. Realizamos nossa confraternização e todos elogiaram a integração das áreas cobertas com o gramado livre. Cozinha de apoio fantástica."</p></div><div class="testimonial-author"><div class="testimonial-author-avatar">TA</div><div class="testimonial-author-info"><h4>Thiago Alencar</h4><p>Diretor Comercial (Dezembro/2023)</p></div></div></div>
-                <div class="testimonial-card"><div><div class="testimonial-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div><p class="testimonial-text">"Comemoramos os 15 anos da minha filha e a decoração rústica combinou perfeitamente com o verde do jardim. O cenário noturno com lâmpadas decorativas fica espetacular nas fotos!"</p></div><div class="testimonial-author"><div class="testimonial-author-avatar">CA</div><div class="testimonial-author-info"><h4>Camila & André</h4><p>Pais da Debutante (Janeiro/2024)</p></div></div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-padding steps reveal" id="como-funciona">
-        <div class="container">
-            <div class="section-title"><span>Simples e Transparente</span><h2>Como Reservar seu Dia</h2></div>
+    <!-- Como Reservar -->
+    <section class="booking section-padding reveal" id="reserva">
+        <div class="container text-center">
+            <h2 class="section-title">Como Reservar</h2>
+            <p>Siga os passos para garantir sua data conosco</p>
+            
             <div class="steps-grid">
-                <div class="step-item"><div class="step-number">01</div><h3>Agende uma Visita</h3><p>Fale conosco pelo WhatsApp para agendarmos uma visita guiada presencial para conhecer as nossas mangueiras e as áreas disponíveis.</p></div>
-                <div class="step-item"><div class="step-number">02</div><h3>Defina os Detalhes</h3><p>Escolha a data ideal para sua comemoração e decida os detalhes contratuais (período de locação, infraestrutura contratada).</p></div>
-                <div class="step-item"><div class="step-number">03</div><h3>Garanta a sua Data</h3><p>Com a assinatura rápida do contrato digital e sinalização, sua data é reservada de forma confiável e segura.</p></div>
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Contato</h3>
+                    <p>Entre em contato via WhatsApp para verificar disponibilidade.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Visita</h3>
+                    <p>Agende uma visita técnica para conhecer cada detalhe do espaço.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Orçamento</h3>
+                    <p>Receba uma proposta personalizada para o seu tipo de evento.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Contrato</h3>
+                    <p>Assine o contrato e garanta a tranquilidade para o seu grande dia.</p>
+                </div>
             </div>
-            <div style="text-align:center;margin-top:50px;">
-                <a href="https://api.whatsapp.com/send?phone=5575992264180&text=Olá!%20Gostaria%20de%20agendar%20uma%20visita%20para%20conhecer%20o%20espaço." target="_blank" class="btn btn-gold">Agendar Visita Agora</a>
+            
+            <div style="margin-top: 50px;">
+                <a href="https://wa.me/5575999999999?text=Olá! Gostaria de saber mais sobre o espaço para eventos." target="_blank" class="btn btn-primary">Falar com Consultor</a>
             </div>
         </div>
     </section>
 
-    <section class="section-padding reveal" id="localizacao">
-        <div class="container">
-            <div class="section-title"><span>Fácil Acesso</span><h2>Onde Estamos Localizados</h2></div>
-            <div class="location-grid">
-                <div class="location-info">
-                    <h3>Casa da Mangueira</h3>
-                    <div class="info-detail"><i class="fa-solid fa-location-dot"></i><div><h4>Endereço</h4><p>Rua Ituaçu, 92 - Conceição</p><p>Feira de Santana - BA, CEP: 44065-618</p></div></div>
-                    <div class="info-detail"><i class="fa-solid fa-clock"></i><div><h4>Visitas ao Espaço</h4><p>Mediante agendamento prévio</p><p>Segunda a Sábado: 09h às 17h</p></div></div>
-                    <div class="info-detail"><i class="fa-solid fa-phone"></i><div><h4>Contato e WhatsApp</h4><p>(75) 99226-4180</p></div></div>
+    <!-- Localização -->
+    <section class="location section-padding reveal" id="localizacao">
+        <div class="container text-center">
+            <h2 class="section-title">Nossa Localização</h2>
+            <p>Fácil acesso no bairro Conceição, Feira de Santana</p>
+            
+            <div class="map-container">
+                <!-- Google Maps Embed -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.281854611276!2d-38.93988692411226!3d-12.229191687998632!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x71439972303038b%3A0x5e086161405f639!2sR.%20Itua%C3%A7u%2C%2092%20-%20Concei%C3%A7%C3%A3o%2C%20Feira%20de%20Santana%20-%20BA%2C%2044065-618!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" 
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
+            <div class="location-info">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>R. Ituaçu, 92 - Conceição, Feira de Santana - BA</span>
                 </div>
-                <div class="map-wrapper">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.1171441703814!2d-38.948278384666524!3d-12.24035669133857!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7143714b9860b09%3A0xdbd9cbdb4cb3bfcb!2sR.%20Itua%C3%A7u%2C%2092%20-%20Concei%C3%A7%C3%A3o%2C%20Feira%20de%20Santana%20-%20BA%2C%2044065-618!5e0!3m2!1spt-BR!2sbr!4v1680000000000!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Atendimento: Seg a Sex, 09h às 18h</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <a href="https://api.whatsapp.com/send?phone=5575992264180&text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20o%20espaço%20para%20eventos." target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <button class="back-to-top" id="back-to-top" aria-label="Voltar ao topo"><i class="fa-solid fa-chevron-up"></i></button>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5575999999999?text=Olá! Gostaria de saber mais sobre o espaço para eventos." class="whatsapp-float" target="_blank" title="Fale Conosco no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <div class="footer-logo-wrapper">
-                        <svg class="brand-logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg"><path d="M57,85 C57,75 50,68 53,60 C55,55 58,52 56,45 C54,40 50,38 48,35 C49,38 52,40 53,44 C54,49 51,53 49,57 C46,64 52,72 52,85 Z" fill="#c5a059"/><path d="M63,85 C63,75 70,68 67,60 C65,55 62,52 64,45 C66,40 70,38 72,35 C71,38 68,40 67,44 C66,49 69,53 71,57 C74,64 68,72 68,85 Z" fill="#c5a059"/><path d="M60,85 C60,78 57,73 59,66 C61,61 64,58 62,52 C60,46 56,43 54,38 C56,41 58,45 58,49 C58,54 55,59 57,64 C59,69 61,75 61,85 Z" fill="#b18f4e"/><path d="M40,85 L80,85 C75,85 70,83 67,81 C64,79 62,82 60,82 C58,82 56,79 53,81 C50,83 45,85 40,85 Z" fill="#c5a059"/><path d="M51,50 C43,46 36,44 30,48 C36,49 42,48 48,52 Z" fill="#c5a059"/><path d="M69,50 C77,46 84,44 90,48 C84,49 78,48 72,52 Z" fill="#c5a059"/><path d="M60,35 C60,24 58,18 55,12 C58,15 61,20 61,28 Z" fill="#c5a059"/><path d="M50,11 C47,6 51,2 56,4 C59,6 56,10 50,11 Z" fill="#c5a059" opacity="0.9"/><path d="M70,11 C73,6 69,2 64,4 C61,6 64,10 70,11 Z" fill="#c5a059" opacity="0.9"/></svg>
-                        <span class="logo-main">Casa da Mangueira</span>
-                        <span class="logo-sub">Eventos</span>
-                    </div>
-                    <p class="footer-desc">Um espaço acolhedor cercado de mangueiras em Feira de Santana, pronto para celebrações inesquecíveis.</p>
-                </div>
-                <div class="footer-links">
-                    <h3>Links Úteis</h3>
-                    <ul>
-                        <li><a href="#home">Início</a></li>
-                        <li><a href="#sobre">O Espaço</a></li>
-                        <li><a href="#eventos">Eventos Atendidos</a></li>
-                        <li><a href="#galeria">Galeria</a></li>
-                        <li><a href="#localizacao">Localização</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Redes Sociais</h3>
-                    <p class="footer-desc">Acompanhe fotos reais de decorações através de nossa rede social.</p>
-                    <div class="social-links">
-                        <a href="https://instagram.com/casadamangueiraeventos" target="_blank" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
-                </div>
+            <span class="footer-logo font-serif">Casa da Mangueira Eventos</span>
+            <div class="social-links">
+                <a href="https://instagram.com/casadamangueiraeventos" target="_blank"><i class="fab fa-instagram"></i> @casadamangueiraeventos</a>
             </div>
+            <p>O cenário ideal para momentos inesquecíveis em Feira de Santana.</p>
             <div class="copyright">
-                <p>&copy; <span id="current-year"></span> Casa da Mangueira Eventos. Todos os direitos reservados.</p>
-                <p style="font-size:.7rem;margin-top:5px;opacity:.6;">Rua Ituaçu, 92 - Conceição, Feira de Santana - BA</p>
+                <p>&copy; 2024 Casa da Mangueira Eventos. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        navToggle.addEventListener('click', () => { navMenu.classList.toggle('active'); navToggle.querySelector('i').classList.toggle('fa-bars'); navToggle.querySelector('i').classList.toggle('fa-xmark'); });
-        document.querySelectorAll('.nav-link').forEach(link => { link.addEventListener('click', () => { navMenu.classList.remove('active'); navToggle.querySelector('i').classList.add('fa-bars'); navToggle.querySelector('i').classList.remove('fa-xmark'); }); });
-        window.addEventListener('scroll', () => { document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50); });
-        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); }); }, { threshold: 0.1 });
-        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        function openLightbox(src, alt) { lightboxImg.src = src; lightboxImg.alt = alt; lightbox.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-        function closeLightbox() { lightbox.style.display = 'none'; document.body.style.overflow = 'auto'; }
-        const backToTopBtn = document.getElementById('back-to-top');
-        window.addEventListener('scroll', () => { backToTopBtn.classList.toggle('active', window.scrollY > 300); });
-        backToTopBtn.addEventListener('click', (e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
-        const counters = document.querySelectorAll('.counter');
-        const counterObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const target = entry.target;
-                    const countTo = parseFloat(target.getAttribute('data-target'));
-                    const suffix = target.getAttribute('data-suffix') || '';
-                    const prefix = target.getAttribute('data-prefix') || '';
-                    let current = 0;
-                    const increment = countTo / (2000 / 20);
-                    const timer = setInterval(() => {
-                        current += increment;
-                        if (current >= countTo) { clearInterval(timer); target.textContent = prefix + (countTo % 1 === 0 ? countTo : countTo.toFixed(1)) + suffix; }
-                        else { target.textContent = prefix + (countTo % 1 === 0 ? Math.floor(current) : current.toFixed(1)) + suffix; }
-                    }, 20);
-                    observer.unobserve(target);
-                }
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            const icon = menuBtn.querySelector('i');
+            if (navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+                menuBtn.querySelector('i').classList.remove('fa-times');
             });
-        }, { threshold: 0.5 });
-        counters.forEach(counter => counterObserver.observe(counter));
+        });
+
+        // Reveal on Scroll Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+
+        window.addEventListener("scroll", reveal);
+        // Run once on load
+        reveal();
     </script>
 </body>
 </html>
